@@ -1,0 +1,180 @@
+header {
+  width: 100vw;
+  height: 500px;
+  background-image: url('../img/bg-header.jpg');
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .25);
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 0;
+
+  nav {
+    background-color: transparent;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+
+    .logo {
+      float: left;
+      font-size: 2em;
+      padding: 10px 20px;
+    }
+
+    .menu-btn {
+      display: none;
+
+      // Checks when the label is clicked (where the span with hamb menu is).
+      // If it is checked, then get the next sibling and apply the styles.
+      &:checked~.menu {
+        background: $color-dark;
+        max-height: 240px;
+      }
+
+      // Animation for the nav-icon to turn into an X when checked
+      &:checked~.menu-icon .nav-icon {
+        background: transparent;
+
+        &::before {
+          transform: rotate(45deg);
+          top: 0;
+        }
+
+        &::after {
+          transform: rotate(-45deg);
+          top: 0;
+        }
+      }
+    }
+
+    .menu-icon {
+      padding: 28px 20px;
+      position: relative; //used to position the nav-icon
+      float: right;
+      cursor: pointer;
+
+      .nav-icon {
+        background: #FFFFFF;
+        display: block;
+        height: 2px;
+        width: 18px;
+        position: relative;
+        transition: all 200ms ease-out;
+
+        &::before,
+        &::after {
+          content: '';
+          background: #FFFFFF;
+          display: block;
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          transition: all 200ms ease-out;
+        }
+
+        &::before {
+          top: -5px;
+        }
+
+        &::after {
+          top: 5px;
+        }
+      }
+    }
+
+    a {
+      color: #FFFFFF;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+      overflow: hidden;
+      text-align: center;
+
+      li {
+        a {
+          display: block;
+          padding: 20px;
+          transition: all 200ms ease-in-out;
+
+          &:hover {
+            color: rgb(255, 46, 99);
+          }
+        }
+      }
+    }
+
+    .menu {
+      clear: both;
+      max-height: 0;
+      transition: max-height 200ms ease-out;
+    }
+  }
+}
+
+header .header-info {
+  margin-top: 150px;
+
+  h1 {
+    color: #FFFFFF;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 4px;
+
+    span {
+      color: $color-pink;
+    }
+  }
+
+  p {
+    margin: 25px 5px;
+    color: #FFFFFF;
+    font-size: 1em;
+    text-align: center;
+    letter-spacing: 4px;
+  }
+
+  .btn-portfolio {
+    @extend .btn;
+    display: block;
+    background: $color-pink;
+    color: #FFFFFF;
+    margin: 50px auto 0 auto;
+
+    &:hover {
+      background: #FFF;
+      color: $color-pink;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .header {
+    li {
+      float: left;
+    }
+
+    .menu {
+      clear: none;
+      float: right;
+      max-height: none;
+    }
+
+    .menu-icon {
+      display: none;
+    }
+  }
+
+  header .header-info {
+    h1 {
+      font-size: 3.5em;
+    }
+
+    p {
+      font-size: 1.3em;
+    }
+  }
+}
