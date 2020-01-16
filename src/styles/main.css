@@ -56,8 +56,9 @@ html {
 
 .btn, header .header-info .btn-portfolio, #about .about-info .about-btns .btn-contact,
 #about .about-info .about-btns .btn-resume {
-  width: 175px;
-  height: 40px;
+  text-decoration: none;
+  text-align: center;
+  display: block;
   font-size: 1em;
   font-weight: bold;
   letter-spacing: 2px;
@@ -66,6 +67,11 @@ html {
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
   cursor: pointer;
+}
+
+.btn a, header .header-info .btn-portfolio a, #about .about-info .about-btns .btn-contact a, #about .about-info .about-btns .btn-resume a {
+  text-decoration: none;
+  display: block;
 }
 
 header {
@@ -210,14 +216,22 @@ header .header-info p {
 }
 
 header .header-info .btn-portfolio {
-  display: block;
+  height: 35px;
+  width: 150px;
+  padding: 5px;
   background: #ff2e63;
-  color: #FFFFFF;
   margin: 50px auto 0 auto;
+}
+
+header .header-info .btn-portfolio a {
+  color: #FFFFFF;
 }
 
 header .header-info .btn-portfolio:hover {
   background: #FFF;
+}
+
+header .header-info .btn-portfolio:hover a {
   color: #ff2e63;
 }
 
@@ -284,11 +298,21 @@ header .header-info .btn-portfolio:hover {
   margin: 0 10px;
 }
 
+#about .about-info .about-btns .btn-contact a,
+#about .about-info .about-btns .btn-resume a {
+  color: #FEFEFE;
+}
+
 #about .about-info .about-btns .btn-contact:hover,
 #about .about-info .about-btns .btn-resume:hover {
   background: #FEFEFE;
-  color: #ff2e63;
   border: 2px solid #ff2e63;
+  color: #ff2e63;
+}
+
+#about .about-info .about-btns .btn-contact:hover a,
+#about .about-info .about-btns .btn-resume:hover a {
+  color: #ff2e63;
 }
 
 #about .skills-info {
@@ -311,10 +335,6 @@ header .header-info .btn-portfolio:hover {
   margin: 40px 0;
 }
 
-#about .skills-info .skill-box .skill-item {
-  margin: 30px 0;
-}
-
 #about .skills-info .skill-box .skill-item h3 {
   text-transform: uppercase;
   font-weight: normal;
@@ -330,5 +350,152 @@ header .header-info .btn-portfolio:hover {
       -ms-flex-direction: row;
           flex-direction: row;
   margin-top: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  #about {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    min-height: 500px;
+  }
+  #about .page-title {
+    text-align: center;
+  }
+  #about .about-info,
+  #about .skills-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  #about .skills-info .skill-item {
+    margin: 0 0;
+  }
+}
+
+.portfolio {
+  width: 100%;
+  background: #1B1919;
+  color: #FFFFFF;
+  padding: 50px 0;
+}
+
+.portfolio .wrapper {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.portfolio .wrapper .page-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.portfolio .wrapper .portfolio-cards {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 30px;
+}
+
+.portfolio .wrapper .portfolio-cards .portfolio-item {
+  border-radius: 10px;
+  height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.portfolio .wrapper .portfolio-cards .portfolio-item .image {
+  border-radius: 10px 10px 0 0;
+  height: 50%;
+  -webkit-box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.25);
+          box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.25);
+  z-index: 999;
+}
+
+.portfolio .wrapper .portfolio-cards .portfolio-item .image img {
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.portfolio .wrapper .portfolio-cards .portfolio-item .item-info {
+  height: 50%;
+  padding: 20px 30px;
+  background: #FEFEFE;
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-radius: 0 0 10px 10px;
+}
+
+.portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn, .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons header .header-info .btn-portfolio, header .header-info .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn-portfolio, .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons #about .about-info .about-btns .btn-contact, #about .about-info .about-btns .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn-contact,
+.portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons #about .about-info .about-btns .btn-resume, #about .about-info .about-btns .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn-resume {
+  margin: 0 15px;
+  background: #FEFEFE;
+  border: 2px solid #1B1919;
+  width: 150px;
+  height: 35px;
+  text-align: center;
+}
+
+.portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn a, .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons header .header-info .btn-portfolio a, header .header-info .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn-portfolio a, .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons #about .about-info .about-btns .btn-contact a, #about .about-info .about-btns .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn-contact a, .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons #about .about-info .about-btns .btn-resume a, #about .about-info .about-btns .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn-resume a {
+  color: #1B1919;
+}
+
+.portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn:hover, .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons header .header-info .btn-portfolio:hover, header .header-info .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn-portfolio:hover, .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons #about .about-info .about-btns .btn-contact:hover, #about .about-info .about-btns .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn-contact:hover,
+.portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons #about .about-info .about-btns .btn-resume:hover, #about .about-info .about-btns .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn-resume:hover {
+  background: #1B1919;
+}
+
+.portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn:hover a, .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons header .header-info .btn-portfolio:hover a, header .header-info .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn-portfolio:hover a, .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons #about .about-info .about-btns .btn-contact:hover a, #about .about-info .about-btns .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn-contact:hover a, .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons #about .about-info .about-btns .btn-resume:hover a, #about .about-info .about-btns .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn-resume:hover a {
+  color: #FEFEFE;
+}
+
+@media only screen and (min-width: 768px) {
+  .portfolio .wrapper {
+    width: 80%;
+  }
+  .portfolio .wrapper .portfolio-cards {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+  .portfolio .wrapper .portfolio-cards .portfolio-item {
+    height: 400px;
+  }
 }
 /*# sourceMappingURL=main.css.map */

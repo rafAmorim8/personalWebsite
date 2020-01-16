@@ -22,7 +22,7 @@
           <ul class="menu">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#work">Work</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
@@ -33,8 +33,8 @@
           and I am a Computer Science student that wants to become a<br />software
           developer.
         </p>
-        <button onClick="goToPortfolio()" class="btn-portfolio">
-          See my Work
+        <button class="btn-portfolio"><a href="#portfolio">See my Work</a>
+
         </button>
       </div>
 
@@ -60,14 +60,65 @@
           enim,facilis natus.<br />
         </p>
         <div class="about-btns">
-          <button onClick="goToContact()" class="btn-contact">
-            Contact Me
+          <button class="btn-contact"><a href="#contact">Contact Me</a>
+
           </button>
           <button class="btn-resume">Download CV</button>
         </div>
       </div>
       <div id="skills-info" class="skills-info">
         <h2 class="page-title">My Skills</h2>
+      </div>
+    </section>
+    <section class="portfolio" id="portfolio">
+      <div class="wrapper">
+        <h1 class="page-title">Portfolio</h1>
+        <div class="portfolio-cards">
+          <div class="portfolio-item">
+            <div class="image">
+              <img src="./src/img/travel_agency_website.JPG" alt="Travel agency website snapshot">
+            </div>
+            <div class="item-info">
+              <h3>Travel Agency Website</h3>
+              <p>Website designed and developed using html, css and bootstrap for the introduction to Web Development
+                course.
+              </p>
+              <div class="portfolio-buttons">
+                <button class="btn"><a href="https://codepen.io/RafAmorim/full/xvXaYV">See Project</a></button>
+                <button class="btn"><a href="https://github.com/rafAmorim8/travelAgencyWebsite">See Code</a></button>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <div class="image">
+              <img src="./src/img/survival_game_picture.JPG" alt="Travel agency website snapshot">
+            </div>
+            <div class="item-info">
+              <h3>Javascript Game</h3>
+              <p> Survivor game built using javascript as a project for the Introduction to Web Programming course.
+              </p>
+              <div class="portfolio-buttons">
+                <button class="btn"><a href="https://codepen.io/RafAmorim/full/QeqVZo">See Project</a></button>
+                <button class="btn"><a href="https://github.com/rafAmorim8/survivalGame">See Code</a></button>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <div class="image">
+              <img src="./src/img/web_app.JPG" alt="Travel agency website snapshot">
+            </div>
+            <div class="item-info">
+              <h3>Selling Web App</h3>
+              <p>Web app built with ReactJS, NodeJS and a MongoDB database for the Full Stack Web Development course.
+              </p>
+              <div class="portfolio-buttons">
+                <button class="btn"><a href="https://ramorim-cpsc2350-production.herokuapp.com/">See
+                    Project</a></button>
+                <button class="btn"><a href="https://github.com/rafAmorim8/ramorim-cpsc2350">See Code</a></button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </div>

@@ -1,6 +1,6 @@
 // Redirect to Portfolio section
 const goToPortfolio = () => {
-  window.location.replace("/index.html#about");
+  window.location.replace("/index.html#portfolio");
 };
 
 // Redirect to Contact section
