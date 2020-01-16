@@ -18,9 +18,7 @@ html {
 }
 
 .wrapper {
-  width: 80%;
-  margin: 0 auto;
-  height: 100%;
+  width: 100%;
 }
 
 .page-title {
@@ -56,7 +54,8 @@ html {
   background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
 }
 
-.btn, header .header-info .btn-portfolio {
+.btn, header .header-info .btn-portfolio, #about .about-info .about-btns .btn-contact,
+#about .about-info .about-btns .btn-resume {
   width: 175px;
   height: 40px;
   font-size: 1em;
@@ -70,8 +69,9 @@ html {
 }
 
 header {
-  width: 100vw;
+  width: 100%;
   height: 500px;
+  background-image: url("../img/bg-header.jpg");
   -webkit-box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.25);
           box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.25);
   background-position: bottom;
@@ -239,5 +239,96 @@ header .header-info .btn-portfolio:hover {
   header .header-info p {
     font-size: 1.3em;
   }
+  .wrapper {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+#about {
+  background: #FEFEFE;
+  padding: 50px 10px;
+}
+
+#about .about-info h2 {
+  font-size: 1.3em;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#about .about-info p {
+  font-size: 0.9em;
+  line-height: 1.5em;
+  letter-spacing: 2px;
+  padding: 0 20px;
+  text-align: justify;
+  margin-bottom: 40px;
+}
+
+#about .about-info .about-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#about .about-info .about-btns .btn-contact,
+#about .about-info .about-btns .btn-resume {
+  background: #ff2e63;
+  color: #FEFEFE;
+  width: 150px;
+  height: 35px;
+  margin: 0 10px;
+}
+
+#about .about-info .about-btns .btn-contact:hover,
+#about .about-info .about-btns .btn-resume:hover {
+  background: #FEFEFE;
+  color: #ff2e63;
+  border: 2px solid #ff2e63;
+}
+
+#about .skills-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#about .skills-info h2 {
+  font-size: 1.3em;
+  letter-spacing: 2px;
+  text-align: center;
+  margin: 40px 0;
+}
+
+#about .skills-info .skill-box .skill-item {
+  margin: 30px 0;
+}
+
+#about .skills-info .skill-box .skill-item h3 {
+  text-transform: uppercase;
+  font-weight: normal;
+  text-align: center;
+}
+
+#about .skills-info .skill-box .skill-item .skill-lines {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 10px;
 }
 /*# sourceMappingURL=main.css.map */
