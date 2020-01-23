@@ -23,24 +23,6 @@ html {
 
 .page-title {
   font-size: 1.3em;
-  letter-spacing: 2px;
-}
-
-.line-full {
-  width: 30px;
-  height: 8px;
-  background: #1B1919;
-  margin-right: 5px;
-  display: inline-block;
-}
-
-.line-empty {
-  width: 30px;
-  height: 8px;
-  background: #FEFEFE;
-  border: 1px solid #1B1919;
-  margin-right: 5px;
-  display: inline-block;
 }
 
 .overlay {
@@ -50,33 +32,63 @@ html {
   right: 0;
   bottom: 0;
   z-index: -1;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.9)), to(rgba(0, 0, 0, 0.7)));
-  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.95)), to(rgba(0, 0, 0, 0.8)));
+  background: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.8));
 }
 
-.btn, header .header-info .btn-portfolio, #about .about-info .about-btns .btn-contact,
-#about .about-info .about-btns .btn-resume {
+.btn, #about .about-info .about-btns .btn-contact,
+#about .about-info .about-btns .btn-resume, #contact .wrapper form .btn-send {
+  border: 2px solid #2EFFD9;
+  border-radius: 50px;
+  width: 150px;
+  padding: 15px;
+  background: transparent;
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+}
+
+.btn a, #about .about-info .about-btns .btn-contact a, #about .about-info .about-btns .btn-resume a, #contact .wrapper form .btn-send a {
+  color: #2EFFD9;
   text-decoration: none;
-  text-align: center;
-  display: block;
-  font-size: 1em;
-  font-weight: bold;
-  letter-spacing: 2px;
+  font-size: 1.2em;
+}
+
+.btn:hover, #about .about-info .about-btns .btn-contact:hover,
+#about .about-info .about-btns .btn-resume:hover, #contact .wrapper form .btn-send:hover {
+  background: #2EFFD9;
   border: none;
-  border-radius: 25px;
-  -webkit-transition: all 300ms ease;
-  transition: all 300ms ease;
-  cursor: pointer;
 }
 
-.btn a, header .header-info .btn-portfolio a, #about .about-info .about-btns .btn-contact a, #about .about-info .about-btns .btn-resume a {
+.btn:hover a, #about .about-info .about-btns .btn-contact:hover a, #about .about-info .about-btns .btn-resume:hover a, #contact .wrapper form .btn-send:hover a {
+  color: #1B1919;
+}
+
+.animated-link {
+  display: inline-block;
   text-decoration: none;
+  line-height: 0.9em;
+  font-weight: bold;
+  color: #1B1919;
+}
+
+.animated-link::after {
+  content: "";
   display: block;
+  position: relative;
+  width: 0%;
+  height: 2px;
+  background: #1B1919;
+  -webkit-transition: all 0.25s cubic-bezier(0.6, 0, 0.3, 1) 0s;
+  transition: all 0.25s cubic-bezier(0.6, 0, 0.3, 1) 0s;
+}
+
+.animated-link:hover::after {
+  width: 100%;
 }
 
 header {
   width: 100%;
-  height: 500px;
+  height: 80vh;
   background-image: url("../img/bg-header.jpg");
   -webkit-box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.25);
           box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.25);
@@ -89,14 +101,16 @@ header {
 
 header nav {
   background-color: transparent;
-  position: fixed;
+  position: absolute;
+  margin: 10px 0;
   width: 100%;
   z-index: 10;
 }
 
 header nav .logo {
   float: left;
-  font-size: 2em;
+  font-size: 1.8em;
+  color: #FFF;
   padding: 10px 20px;
 }
 
@@ -133,10 +147,10 @@ header nav .menu-icon {
 }
 
 header nav .menu-icon .nav-icon {
-  background: #FFFFFF;
+  background: #FFF;
   display: block;
   height: 2px;
-  width: 18px;
+  width: 25px;
   position: relative;
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
@@ -144,7 +158,7 @@ header nav .menu-icon .nav-icon {
 
 header nav .menu-icon .nav-icon::before, header nav .menu-icon .nav-icon::after {
   content: '';
-  background: #FFFFFF;
+  background: #FFF;
   display: block;
   height: 100%;
   width: 100%;
@@ -154,11 +168,13 @@ header nav .menu-icon .nav-icon::before, header nav .menu-icon .nav-icon::after 
 }
 
 header nav .menu-icon .nav-icon::before {
-  top: -5px;
+  top: -8px;
+  width: 23px;
 }
 
 header nav .menu-icon .nav-icon::after {
-  top: 5px;
+  top: 8px;
+  width: 23px;
 }
 
 header nav a {
@@ -191,51 +207,37 @@ header nav .menu {
   transition: max-height 200ms ease-out;
 }
 
+header .btn, header #about .about-info .about-btns .btn-contact, #about .about-info .about-btns header .btn-contact,
+header #about .about-info .about-btns .btn-resume, #about .about-info .about-btns header .btn-resume, header #contact .wrapper form .btn-send, #contact .wrapper form header .btn-send {
+  margin: 80px auto 0 auto;
+}
+
 header .header-info {
-  margin-top: 150px;
-}
-
-header .header-info h1 {
-  color: #FFFFFF;
-  font-size: 2.5em;
-  font-weight: bold;
+  margin-top: 200px;
+  padding: 15px;
   text-align: center;
-  letter-spacing: 4px;
-}
-
-header .header-info h1 span {
-  color: #ff2e63;
 }
 
 header .header-info p {
-  margin: 25px 5px;
   color: #FFFFFF;
-  font-size: 1em;
-  text-align: center;
-  letter-spacing: 4px;
+  font-weight: normal;
 }
 
-header .header-info .btn-portfolio {
-  height: 35px;
-  width: 150px;
-  padding: 5px;
-  background: #ff2e63;
-  margin: 50px auto 0 auto;
+header .header-info .head-name {
+  margin: 20px 0 30px 0;
+  color: #2EFFD9;
+  font-size: 2.5em;
+  font-weight: bold;
 }
 
-header .header-info .btn-portfolio a {
-  color: #FFFFFF;
-}
-
-header .header-info .btn-portfolio:hover {
-  background: #FFF;
-}
-
-header .header-info .btn-portfolio:hover a {
-  color: #ff2e63;
+header .header-info .head-description {
+  line-height: 1.5em;
 }
 
 @media only screen and (min-width: 768px) {
+  .header {
+    height: 600px;
+  }
   .header li {
     float: left;
   }
@@ -266,7 +268,6 @@ header .header-info .btn-portfolio:hover a {
 
 #about .about-info h2 {
   font-size: 1.3em;
-  letter-spacing: 2px;
   text-align: center;
   margin-bottom: 40px;
 }
@@ -274,10 +275,25 @@ header .header-info .btn-portfolio:hover a {
 #about .about-info p {
   font-size: 0.9em;
   line-height: 1.5em;
-  letter-spacing: 2px;
   padding: 0 20px;
-  text-align: justify;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+}
+
+#about .about-info ul {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[2];
+      grid-template-columns: repeat(2, auto);
+  width: 100%;
+  padding: 0 20px;
+  font-size: 0.9em;
+  line-height: 1.5em;
+  margin-bottom: 20px;
+}
+
+#about .about-info ul li {
+  list-style-position: inside;
+  list-style-type: circle;
 }
 
 #about .about-info .about-btns {
@@ -291,7 +307,7 @@ header .header-info .btn-portfolio:hover a {
 
 #about .about-info .about-btns .btn-contact,
 #about .about-info .about-btns .btn-resume {
-  background: #ff2e63;
+  background: #2EFFD9;
   color: #FEFEFE;
   width: 150px;
   height: 35px;
@@ -306,13 +322,13 @@ header .header-info .btn-portfolio:hover a {
 #about .about-info .about-btns .btn-contact:hover,
 #about .about-info .about-btns .btn-resume:hover {
   background: #FEFEFE;
-  border: 2px solid #ff2e63;
-  color: #ff2e63;
+  border: 2px solid #2EFFD9;
+  color: #2EFFD9;
 }
 
 #about .about-info .about-btns .btn-contact:hover a,
 #about .about-info .about-btns .btn-resume:hover a {
-  color: #ff2e63;
+  color: #2EFFD9;
 }
 
 #about .skills-info {
@@ -349,7 +365,7 @@ header .header-info .btn-portfolio:hover a {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-top: 10px;
+  margin: 15px 0;
 }
 
 @media only screen and (min-width: 768px) {
@@ -395,9 +411,11 @@ header .header-info .btn-portfolio:hover a {
 .portfolio .wrapper .page-title {
   text-align: center;
   margin-bottom: 50px;
+  color: #FFF;
 }
 
 .portfolio .wrapper .portfolio-cards {
+  width: 100%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
@@ -406,8 +424,7 @@ header .header-info .btn-portfolio:hover a {
 }
 
 .portfolio .wrapper .portfolio-cards .portfolio-item {
-  border-radius: 10px;
-  height: 400px;
+  height: 350px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -415,18 +432,37 @@ header .header-info .btn-portfolio:hover a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 10px 30px -15px #000;
+          box-shadow: 0px 10px 30px -15px #000;
+  position: relative;
+  -webkit-transition: all 250ms ease-in;
+  transition: all 250ms ease-in;
+  z-index: 1;
+}
+
+.portfolio .wrapper .portfolio-cards .portfolio-item:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.portfolio .wrapper .portfolio-cards .portfolio-item:hover:before {
+  background: transparent;
 }
 
 .portfolio .wrapper .portfolio-cards .portfolio-item .image {
-  border-radius: 10px 10px 0 0;
   height: 50%;
   -webkit-box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.25);
           box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.25);
-  z-index: 999;
+  z-index: 2;
 }
 
 .portfolio .wrapper .portfolio-cards .portfolio-item .image img {
-  border-radius: 10px 10px 0 0;
+  border-radius: 3px;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -435,7 +471,7 @@ header .header-info .btn-portfolio:hover a {
 
 .portfolio .wrapper .portfolio-cards .portfolio-item .item-info {
   height: 50%;
-  padding: 20px 30px;
+  padding: 10px 20px;
   background: #FEFEFE;
   color: black;
   display: -webkit-box;
@@ -451,7 +487,7 @@ header .header-info .btn-portfolio:hover a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 3px 3px;
 }
 
 .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons {
@@ -463,26 +499,27 @@ header .header-info .btn-portfolio:hover a {
           justify-content: center;
 }
 
-.portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn, .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons header .header-info .btn-portfolio, header .header-info .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn-portfolio, .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons #about .about-info .about-btns .btn-contact, #about .about-info .about-btns .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn-contact,
-.portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons #about .about-info .about-btns .btn-resume, #about .about-info .about-btns .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn-resume {
-  margin: 0 15px;
+.portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn, .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons #about .about-info .about-btns .btn-contact, #about .about-info .about-btns .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn-contact,
+.portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons #about .about-info .about-btns .btn-resume, #about .about-info .about-btns .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn-resume, .portfolio #contact .wrapper .portfolio-cards .portfolio-item .portfolio-buttons form .btn-send, #contact .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons form .btn-send, .portfolio #contact .wrapper form .portfolio-cards .portfolio-item .portfolio-buttons .btn-send, #contact .portfolio .wrapper form .portfolio-cards .portfolio-item .portfolio-buttons .btn-send {
+  margin: 0 5px;
   background: #FEFEFE;
   border: 2px solid #1B1919;
-  width: 150px;
-  height: 35px;
+  width: 120px;
+  height: 30px;
   text-align: center;
+  font-size: 0.9em;
 }
 
-.portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn a, .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons header .header-info .btn-portfolio a, header .header-info .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn-portfolio a, .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons #about .about-info .about-btns .btn-contact a, #about .about-info .about-btns .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn-contact a, .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons #about .about-info .about-btns .btn-resume a, #about .about-info .about-btns .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn-resume a {
+.portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn a, .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons #about .about-info .about-btns .btn-contact a, #about .about-info .about-btns .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn-contact a, .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons #about .about-info .about-btns .btn-resume a, #about .about-info .about-btns .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn-resume a, .portfolio #contact .wrapper .portfolio-cards .portfolio-item .portfolio-buttons form .btn-send a, #contact .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons form .btn-send a, .portfolio #contact .wrapper form .portfolio-cards .portfolio-item .portfolio-buttons .btn-send a, #contact .portfolio .wrapper form .portfolio-cards .portfolio-item .portfolio-buttons .btn-send a {
   color: #1B1919;
 }
 
-.portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn:hover, .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons header .header-info .btn-portfolio:hover, header .header-info .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn-portfolio:hover, .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons #about .about-info .about-btns .btn-contact:hover, #about .about-info .about-btns .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn-contact:hover,
-.portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons #about .about-info .about-btns .btn-resume:hover, #about .about-info .about-btns .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn-resume:hover {
+.portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn:hover, .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons #about .about-info .about-btns .btn-contact:hover, #about .about-info .about-btns .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn-contact:hover,
+.portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons #about .about-info .about-btns .btn-resume:hover, #about .about-info .about-btns .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn-resume:hover, .portfolio #contact .wrapper .portfolio-cards .portfolio-item .portfolio-buttons form .btn-send:hover, #contact .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons form .btn-send:hover, .portfolio #contact .wrapper form .portfolio-cards .portfolio-item .portfolio-buttons .btn-send:hover, #contact .portfolio .wrapper form .portfolio-cards .portfolio-item .portfolio-buttons .btn-send:hover {
   background: #1B1919;
 }
 
-.portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn:hover a, .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons header .header-info .btn-portfolio:hover a, header .header-info .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn-portfolio:hover a, .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons #about .about-info .about-btns .btn-contact:hover a, #about .about-info .about-btns .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn-contact:hover a, .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons #about .about-info .about-btns .btn-resume:hover a, #about .about-info .about-btns .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn-resume:hover a {
+.portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn:hover a, .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons #about .about-info .about-btns .btn-contact:hover a, #about .about-info .about-btns .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn-contact:hover a, .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons #about .about-info .about-btns .btn-resume:hover a, #about .about-info .about-btns .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons .btn-resume:hover a, .portfolio #contact .wrapper .portfolio-cards .portfolio-item .portfolio-buttons form .btn-send:hover a, #contact .portfolio .wrapper .portfolio-cards .portfolio-item .portfolio-buttons form .btn-send:hover a, .portfolio #contact .wrapper form .portfolio-cards .portfolio-item .portfolio-buttons .btn-send:hover a, #contact .portfolio .wrapper form .portfolio-cards .portfolio-item .portfolio-buttons .btn-send:hover a {
   color: #FEFEFE;
 }
 
@@ -496,6 +533,114 @@ header .header-info .btn-portfolio:hover a {
   }
   .portfolio .wrapper .portfolio-cards .portfolio-item {
     height: 400px;
+    -webkit-transition: -webkit-transform 200ms ease-in-out;
+    transition: -webkit-transform 200ms ease-in-out;
+    transition: transform 200ms ease-in-out;
+    transition: transform 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
+  }
+  .portfolio .wrapper .portfolio-cards .portfolio-item:hover {
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02);
+  }
+}
+
+#contact {
+  width: 100%;
+  background-color: #FEFEFE;
+}
+
+#contact .wrapper {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 15px;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#contact .wrapper h2 {
+  text-align: center;
+  margin: 40px 0;
+}
+
+#contact .wrapper p {
+  margin: 10px 0;
+  text-align: center;
+  font-size: .9em;
+  line-height: 1.5em;
+}
+
+#contact .wrapper form {
+  padding: 15px;
+  width: 100%;
+  margin: 15px 0;
+}
+
+#contact .wrapper form label {
+  margin: 0 auto;
+  width: 80%;
+  text-align: left;
+  display: block;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: .9em;
+}
+
+#contact .wrapper form .label-message {
+  margin-bottom: 10px;
+}
+
+#contact .wrapper form input,
+#contact .wrapper form textarea {
+  width: 80%;
+}
+
+#contact .wrapper form input {
+  border: none;
+  border-bottom: 2px solid #1B1919;
+  height: 25px;
+  font-size: .9em;
+  -webkit-transition: all 0.25s cubic-bezier(0.6, 0, 0.3, 1) 0s;
+  transition: all 0.25s cubic-bezier(0.6, 0, 0.3, 1) 0s;
+}
+
+#contact .wrapper form input:focus {
+  border-bottom: 2px solid #2EFFD9;
+}
+
+#contact .wrapper form textarea {
+  border: 2px solid #1B1919;
+  padding: 5px;
+  font-size: .9em;
+  resize: none;
+  -webkit-transition: all 0.25s cubic-bezier(0.6, 0, 0.3, 1) 0s;
+  transition: all 0.25s cubic-bezier(0.6, 0, 0.3, 1) 0s;
+}
+
+#contact .wrapper form textarea:focus {
+  border: 2px solid #2EFFD9;
+}
+
+#contact .wrapper form .btn-send {
+  margin: 25px 0;
+  border: 2px solid #1B1919;
+  font-size: 1em;
+  padding: 5px;
+}
+
+@media only screen and (min-width: 768px) {
+  #contact .wrapper form {
+    margin-top: 50px;
+    width: 60%;
   }
 }
 /*# sourceMappingURL=main.css.map */

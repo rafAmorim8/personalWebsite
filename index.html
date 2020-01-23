@@ -28,12 +28,13 @@
         </div>
       </nav>
       <div class="header-info wrapper">
-        <h1>Hello, I am <span>Rafael</span></h1>
-        <p>
-          and I am a Computer Science student that wants to become a<br />software
+        <p class="head-hello">Hello, my name is</p>
+        <p class="head-name">Rafael Amorim</p>
+        <p class="head-description">
+          I am a Computer Science student that wants to become a software
           developer.
         </p>
-        <button class="btn-portfolio"><a href="#portfolio">See my Work</a>
+        <button class="btn"><a href="#portfolio">See my Work</a>
 
         </button>
       </div>
@@ -46,29 +47,27 @@
       <div class="about-info">
         <h2 class="page-title">About Me</h2>
         <p>
-          Lorem ipsum,dolor sit amet consectetur adipisicing elit. Architecto
-          illo minus omnis ab tempora consequuntur exercitationem rerum id
-          molestias iure sint aspernatur,suscipit repudiandae neque quidem rem
-          enim,facilis natus.<br /><br />
-          Lorem ipsum,dolor sit amet consectetur adipisicing elit. Architecto
-          illo minus omnis ab tempora consequuntur exercitationem rerum id
-          molestias iure sint aspernatur,suscipit repudiandae neque quidem rem
-          enim,facilis natus.<br /><br />
-          Lorem ipsum,dolor sit amet consectetur adipisicing elit. Architecto
-          illo minus omnis ab tempora consequuntur exercitationem rerum id
-          molestias iure sint aspernatur,suscipit repudiandae neque quidem rem
-          enim,facilis natus.<br />
+          Hi! I am Rafael, a computer science student that lives in Vancouver, who loves developing things.<br /><br>
+          During my 1.5 years as a CS student at <a class="animated-link" href="http://www.langara.ca">Langara
+            College</a> I have developed
+          some websites and web apps to apply the concepts
+          I've learnt in class.<br /><br>
+          I am currently looking for a co-op position to gain more practical experience by building well developed apps
+          while working with experienced developers. <br><br>
+          Below are some of the technologies I have worked with:
         </p>
-        <div class="about-btns">
-          <button class="btn-contact"><a href="#contact">Contact Me</a>
+        <ul class="technologies">
+          <li>JavaScript</li>
+          <li>HTML &amp CSS</li>
+          <li>React</li>
+          <li>Node.js</li>
+          <li>TypeScript</li>
+          <li>Git</li>
+          <li>Java (begginer)</li>
+        </ul>
 
-          </button>
-          <button class="btn-resume">Download CV</button>
-        </div>
       </div>
-      <div id="skills-info" class="skills-info">
-        <h2 class="page-title">My Skills</h2>
-      </div>
+
     </section>
     <section class="portfolio" id="portfolio">
       <div class="wrapper">
@@ -121,8 +120,31 @@
         </div>
       </div>
     </section>
+    <section id="contact">
+      <div class="wrapper">
+        <h2 class="page-title">Contact Me</h2>
+        <p>I am currently looking for co-op opportunities. However, feel free to <a class="animated-link"
+            href="mailto:raff.code@gmail.com">email</a> me for any kind
+          of project or even just to say hi.<br><br>If you prefer simply fill out the form bellow:</p>
+        <form action="send" method="post">
+          <p>
+            <label>Name</label>
+            <input type="text" name="name" placeholder="Enter your name">
+          </p>
+          <p>
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Enter your email">
+          </p>
+          <p>
+            <label class="label-message">Message</label>
+            <textarea name="message" cols="30" rows="5" placeholder="Type your message"></textarea>
+          </p>
+          <button class="btn-send" type="submit">Send</button>
+        </form>
+      </div>
+    </section>
   </div>
-  <script src="../js/script.js" type="text/javascript"></script>
+  <script src="/js/script.js" type="text/javascript"></script>
 </body>
 
 </html>

@@ -1,6 +1,6 @@
 header {
   width: 100%;
-  height: 500px;
+  height: 80vh;
   background-image: url('../img/bg-header.jpg');
   box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .25);
   background-position: bottom;
@@ -11,13 +11,15 @@ header {
 
   nav {
     background-color: transparent;
-    position: fixed;
+    position: absolute;
+    margin: 10px 0;
     width: 100%;
     z-index: 10;
 
     .logo {
       float: left;
-      font-size: 2em;
+      font-size: 1.8em;
+      color: #FFF;
       padding: 10px 20px;
     }
 
@@ -54,17 +56,17 @@ header {
       cursor: pointer;
 
       .nav-icon {
-        background: #FFFFFF;
+        background: #FFF;
         display: block;
         height: 2px;
-        width: 18px;
+        width: 25px;
         position: relative;
         transition: all 200ms ease-out;
 
         &::before,
         &::after {
           content: '';
-          background: #FFFFFF;
+          background: #FFF;
           display: block;
           height: 100%;
           width: 100%;
@@ -73,11 +75,13 @@ header {
         }
 
         &::before {
-          top: -5px;
+          top: -8px;
+          width: 23px;
         }
 
         &::after {
-          top: 5px;
+          top: 8px;
+          width: 23px;
         }
       }
     }
@@ -112,56 +116,40 @@ header {
       transition: max-height 200ms ease-out;
     }
   }
+
+  .btn {
+    margin: 80px auto 0 auto;
+  }
 }
 
 header .header-info {
-  margin-top: 150px;
-
-  h1 {
-    color: #FFFFFF;
-    font-size: 2.5em;
-    font-weight: bold;
-    text-align: center;
-    letter-spacing: 4px;
-
-    span {
-      color: $color-pink;
-    }
-  }
+  margin-top: 200px;
+  padding: 15px;
+  text-align: center;
 
   p {
-    margin: 25px 5px;
     color: #FFFFFF;
-    font-size: 1em;
-    text-align: center;
-    letter-spacing: 4px;
+    font-weight: normal;
   }
 
-  .btn-portfolio {
-    @extend .btn;
-    height: 35px;
-    width: 150px;
-    padding: 5px;
-    background: $color-pink;
-    margin: 50px auto 0 auto;
-
-    a {
-      color: #FFFFFF;
-    }
-
-    &:hover {
-      background: #FFF;
-
-      a {
-        color: $color-pink;
-      }
-
-    }
+  .head-name {
+    margin: 20px 0 30px 0;
+    color: $color-pink;
+    font-size: 2.5em;
+    font-weight: bold;
   }
+
+  .head-description {
+    line-height: 1.5em;
+  }
+
+
 }
 
 @media only screen and (min-width: 768px) {
   .header {
+    height: 600px;
+
     li {
       float: left;
     }

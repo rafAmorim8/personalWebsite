@@ -1,0 +1,23 @@
+.animated-link {
+  display: inline-block;
+  text-decoration: none;
+  line-height: 0.9em;
+  font-weight: bold;
+  color: $color-dark;
+
+  &::after {
+    content: "";
+    display: block;
+    position: relative;
+    width: 0%;
+    height: 2px;
+    background: $color-dark;
+    transition: all 0.25s cubic-bezier(0.6, 0.0, 0.3, 1) 0s;
+  }
+
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
+}
