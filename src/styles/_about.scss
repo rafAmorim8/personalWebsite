@@ -63,56 +63,17 @@
   }
 }
 
-#about .skills-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  h2 {
-    font-size: 1.3em;
-    letter-spacing: 2px;
-    text-align: center;
-    margin: 40px 0;
-  }
-
-  .skill-box {
-    .skill-item {
-
-      h3 {
-        text-transform: uppercase;
-        font-weight: normal;
-        text-align: center;
-      }
-
-      .skill-lines {
-        display: flex;
-        flex-direction: row;
-        margin: 15px 0;
-      }
-    }
-  }
-}
-
 @media only screen and (min-width: 768px) {
   #about {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 500px;
+    .wrapper {
+      .about-info {
+        // text-align: center;
 
-    .page-title {
-      text-align: center;
-    }
-
-    .about-info,
-    .skills-info {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-    }
-
-    .skills-info {
-      .skill-item {
-        margin: 0 0;
+        ul {
+          // margin: 0 auto;
+          width: 50%;
+          text-align-last: left;
+        }
       }
     }
   }
