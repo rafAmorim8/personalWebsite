@@ -671,4 +671,11 @@ footer .overlay p a {
   color: #fff;
   font-size: .9em;
 }
+<<<<<<< HEAD
+=======
+
+footer .overlay p a:hover {
+  color: #2EFFD9;
+}
+>>>>>>> feature_footer
 /*# sourceMappingURL=main.css.map */
