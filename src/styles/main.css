@@ -190,7 +190,7 @@ header nav .menu-icon .nav-icon::after {
 }
 
 header nav a {
-  color: #FFFFFF;
+  color: #FFF;
   font-weight: 600;
   text-decoration: none;
 }
@@ -199,6 +199,7 @@ header nav ul {
   list-style: none;
   overflow: hidden;
   text-align: center;
+  background: transparent;
 }
 
 header nav ul li a {
@@ -216,6 +217,7 @@ header nav ul li a:hover {
 header nav .menu {
   clear: both;
   max-height: 0;
+  background-color: transparent;
   -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
 }
@@ -281,7 +283,7 @@ header .header-info .head-description {
   .header .menu {
     clear: none;
     float: right;
-    max-height: none;
+    max-height: 0;
   }
   .header .menu-icon {
     display: none;
@@ -620,5 +622,53 @@ header .header-info .head-description {
     margin-top: 50px;
     width: 60%;
   }
+}
+
+footer {
+  height: 100px;
+  background-image: url("../img/bg-footer.jpg");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 0;
+}
+
+footer .overlay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .overlay .footer-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 2;
+}
+
+footer .overlay .footer-icons i {
+  color: #FFF;
+  padding: 15px;
+  font-size: 20px;
+}
+
+footer .overlay .footer-icons i:hover {
+  color: #2EFFD9;
+}
+
+footer .overlay p a {
+  text-decoration: none;
+  color: #fff;
+  font-size: .9em;
 }
 /*# sourceMappingURL=main.css.map */
