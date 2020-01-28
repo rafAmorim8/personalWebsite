@@ -56,7 +56,6 @@ html {
 .btn:hover, #about .about-info .about-btns .btn-contact:hover,
 #about .about-info .about-btns .btn-resume:hover, #contact .wrapper form .btn-send:hover {
   background: #2EFFD9;
-  border: none;
 }
 
 .btn:hover a, #about .about-info .about-btns .btn-contact:hover a, #about .about-info .about-btns .btn-resume:hover a, #contact .wrapper form .btn-send:hover a {
@@ -615,6 +614,10 @@ header .header-info .head-description {
   border: 2px solid #1B1919;
   font-size: 1em;
   padding: 5px;
+}
+
+#contact .wrapper form .btn-send:hover {
+  border: 2px solid #2EFFD9;
 }
 
 @media only screen and (min-width: 768px) {
