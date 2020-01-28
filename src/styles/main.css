@@ -95,14 +95,14 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
-  z-index: 0;
+  z-index: 999;
 }
 
 header nav {
   background-color: transparent;
   position: fixed;
   top: 0;
-  z-index: 9999 !important;
+  z-index: 10;
   width: 100%;
   height: 80px;
   padding-top: 10px;
@@ -199,6 +199,8 @@ header nav ul {
   overflow: hidden;
   text-align: center;
   background: transparent;
+  position: relative;
+  z-index: 9999;
 }
 
 header nav ul li a {
@@ -235,6 +237,7 @@ header #about .about-info .about-btns .btn-resume, #about .about-info .about-btn
   color: #000;
   -webkit-box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -10px;
           box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -10px;
+  z-index: 11;
 }
 
 .nav-light .logo,
@@ -402,6 +405,8 @@ header .header-info .head-description {
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
   grid-gap: 30px;
+  position: relative;
+  z-index: 0;
 }
 
 .portfolio .wrapper .portfolio-cards .portfolio-item {
