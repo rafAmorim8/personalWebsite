@@ -283,7 +283,7 @@ header .header-info .head-description {
   .header .menu {
     clear: none;
     float: right;
-    max-height: 0;
+    max-height: 80px;
   }
   .header .menu-icon {
     display: none;
