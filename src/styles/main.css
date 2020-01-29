@@ -23,6 +23,7 @@ html {
 
 .page-title {
   font-size: 1.3em;
+  text-transform: uppercase;
 }
 
 .overlay {
@@ -329,8 +330,9 @@ header .header-info .head-description {
 #about .about-info ul {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (auto)[2];
-      grid-template-columns: repeat(2, auto);
+  -ms-grid-columns: (max-content)[2];
+      grid-template-columns: repeat(2, -webkit-max-content);
+      grid-template-columns: repeat(2, max-content);
   width: 100%;
   padding: 0 20px;
   font-size: 0.9em;
@@ -341,6 +343,7 @@ header .header-info .head-description {
 #about .about-info ul li {
   list-style-position: inside;
   list-style-type: circle;
+  margin-right: 15px;
 }
 
 #about .about-info .about-btns {
@@ -360,7 +363,7 @@ header .header-info .head-description {
 }
 
 #about .about-info .about-btns .btn-resume a {
-  color: #FEFEFE;
+  color: #000;
 }
 
 #about .about-info .about-btns .btn-resume:hover {
@@ -372,9 +375,9 @@ header .header-info .head-description {
   display: none;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   #about {
-    height: 600px;
+    height: 620px;
   }
   #about .wrapper {
     display: -ms-grid;
@@ -388,7 +391,6 @@ header .header-info .head-description {
     grid-column: 2/3;
   }
   #about .wrapper .about-info ul {
-    width: 50%;
     text-align-last: left;
   }
   #about .wrapper .about-picture {
@@ -503,7 +505,7 @@ header .header-info .head-description {
 }
 
 .portfolio .wrapper .portfolio-cards .portfolio-item .image img {
-  border-radius: 3px;
+  border-radius: 3px 3px 0 0;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -567,11 +569,32 @@ header .header-info .head-description {
     width: 80%;
   }
   .portfolio .wrapper .portfolio-cards {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+  .portfolio .wrapper .portfolio-cards .portfolio-item {
+    height: 300px;
+    -webkit-transition: -webkit-transform 200ms ease-in-out;
+    transition: -webkit-transform 200ms ease-in-out;
+    transition: transform 200ms ease-in-out;
+    transition: transform 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
+  }
+  .portfolio .wrapper .portfolio-cards .portfolio-item:hover {
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .portfolio .wrapper {
+    width: 80%;
+  }
+  .portfolio .wrapper .portfolio-cards {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
   }
   .portfolio .wrapper .portfolio-cards .portfolio-item {
-    height: 400px;
+    height: 350px;
     -webkit-transition: -webkit-transform 200ms ease-in-out;
     transition: -webkit-transform 200ms ease-in-out;
     transition: transform 200ms ease-in-out;

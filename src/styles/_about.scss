@@ -18,7 +18,7 @@
 
     ul {
       display: grid;
-      grid-template-columns: repeat(2, auto);
+      grid-template-columns: repeat(2, max-content);
       width: 100%;
       padding: 0 20px;
       font-size: 0.9em;
@@ -29,6 +29,7 @@
       li {
         list-style-position: inside;
         list-style-type: circle;
+        margin-right: 15px;
       }
     }
 
@@ -44,7 +45,7 @@
         cursor: pointer;
 
         a {
-          color: $color-cream;
+          color: #000;
         }
 
         &:hover {
@@ -59,9 +60,9 @@
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   #about {
-    height: 600px;
+    height: 620px;
 
     .wrapper {
       display: grid;
@@ -71,8 +72,6 @@
         grid-column: 2/3;
 
         ul {
-          // margin: 0 auto;
-          width: 50%;
           text-align-last: left;
         }
       }
