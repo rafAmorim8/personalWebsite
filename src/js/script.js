@@ -1,13 +1,3 @@
-// Redirect to Portfolio section
-const goToPortfolio = () => {
-  window.location.replace("/index.html#portfolio");
-};
-
-// Redirect to Contact section
-const goToContact = () => {
-  window.location.replace("/index.html#contact");
-};
-
 // Show and hide navbar on scroll + add bg-color on 0 offset
 var lastScrollTop = 0;
 var navbar = document.getElementById("navbar");
@@ -31,3 +21,8 @@ window.addEventListener("scroll", () => {
     menu.classList.remove("menu-light");
   }
 });
+
+// Hide navbar on nav-item click
+const uncheck = () => {
+  document.getElementById("menu-btn").checked = false;
+};

@@ -20,10 +20,12 @@ header {
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
 
     .logo {
+      position: relative;
       float: left;
       font-size: 1.8em;
       color: #FFF;
       padding: 10px 20px;
+      z-index: 10;
 
       &:hover {
         color: $color-pink;
@@ -37,7 +39,11 @@ header {
       // Checks when the label is clicked (where the span with hamb menu is).
       // If it is checked, then get the next sibling and apply the styles.
       &:checked~.menu {
-        max-height: 240px;
+        position: relative;
+        top: -80px;
+        height: 105vh;
+        z-index: 0;
+        padding: 100px 0;
       }
 
       &:checked~.menu-light {
@@ -63,6 +69,7 @@ header {
     .menu-icon {
       padding: 28px 20px;
       position: relative; //used to position the nav-icon
+      z-index: 10;
       float: right;
       cursor: pointer;
 
@@ -127,8 +134,8 @@ header {
 
     .menu {
       clear: both;
-      max-height: 0;
-      background-color: transparent;
+      height: 0vh;
+      background-color: #000;
       transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
     }
   }
@@ -203,7 +210,8 @@ header .header-info {
     .menu {
       clear: none;
       float: right;
-      max-height: 80px;
+      height: 80px;
+      background-color: transparent;
     }
 
     .menu-icon {

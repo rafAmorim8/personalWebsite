@@ -81,7 +81,7 @@
         cursor: pointer;
 
         &:hover {
-          box-shadow: 1px 1px 8px $color-dark;
+          box-shadow: 1px 1px 15px rgba($color-dark, 0.25);
         }
       }
     }

@@ -109,10 +109,12 @@ header nav {
 }
 
 header nav .logo {
+  position: relative;
   float: left;
   font-size: 1.8em;
   color: #FFF;
   padding: 10px 20px;
+  z-index: 10;
 }
 
 header nav .logo:hover {
@@ -125,7 +127,11 @@ header nav .menu-btn {
 }
 
 header nav .menu-btn:checked ~ .menu {
-  max-height: 240px;
+  position: relative;
+  top: -80px;
+  height: 105vh;
+  z-index: 0;
+  padding: 100px 0;
 }
 
 header nav .menu-btn:checked ~ .menu-light {
@@ -151,6 +157,7 @@ header nav .menu-btn:checked ~ .menu-icon .nav-icon::after {
 header nav .menu-icon {
   padding: 28px 20px;
   position: relative;
+  z-index: 10;
   float: right;
   cursor: pointer;
 }
@@ -215,8 +222,8 @@ header nav ul li a:hover {
 
 header nav .menu {
   clear: both;
-  max-height: 0;
-  background-color: transparent;
+  height: 0vh;
+  background-color: #000;
   -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
 }
@@ -283,7 +290,8 @@ header .header-info .head-description {
   .header .menu {
     clear: none;
     float: right;
-    max-height: 80px;
+    height: 80px;
+    background-color: transparent;
   }
   .header .menu-icon {
     display: none;
@@ -356,8 +364,8 @@ header .header-info .head-description {
 }
 
 #about .about-info .about-btns .btn-resume:hover {
-  -webkit-box-shadow: 1px 1px 8px #1B1919;
-          box-shadow: 1px 1px 8px #1B1919;
+  -webkit-box-shadow: 1px 1px 15px rgba(27, 25, 25, 0.25);
+          box-shadow: 1px 1px 15px rgba(27, 25, 25, 0.25);
 }
 
 #about .about-picture {
@@ -421,6 +429,8 @@ header .header-info .head-description {
   }
   #about .wrapper .about-picture .picture-area:hover:before {
     background: transparent;
+    -webkit-box-shadow: 1px 1px 15px rgba(27, 25, 25, 0.25);
+            box-shadow: 1px 1px 15px rgba(27, 25, 25, 0.25);
   }
 }
 
@@ -669,8 +679,8 @@ header .header-info .head-description {
 }
 
 #contact .wrapper form .btn-send:hover {
-  -webkit-box-shadow: 1px 1px 8px #1B1919;
-          box-shadow: 1px 1px 8px #1B1919;
+  -webkit-box-shadow: 1px 1px 15px rgba(27, 25, 25, 0.25);
+          box-shadow: 1px 1px 15px rgba(27, 25, 25, 0.25);
 }
 
 @media only screen and (min-width: 768px) {

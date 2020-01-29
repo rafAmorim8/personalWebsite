@@ -48,11 +48,7 @@
         }
 
         &:hover {
-          box-shadow: 1px 1px 8px $color-dark;
-
-          a {
-            // color: $color-pink;
-          }
+          box-shadow: 1px 1px 15px rgba($color-dark, 0.25);
         }
       }
     }
@@ -112,6 +108,7 @@
           &:hover {
             &:before {
               background: transparent;
+              box-shadow: 1px 1px 15px rgba($color-dark, 0.25);
             }
           }
 
