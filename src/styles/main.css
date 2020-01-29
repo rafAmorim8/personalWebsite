@@ -36,8 +36,7 @@ html {
   background: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.8));
 }
 
-.btn, #about .about-info .about-btns .btn-contact,
-#about .about-info .about-btns .btn-resume, #contact .wrapper form .btn-send {
+.btn, #about .about-info .about-btns .btn-resume, #contact .wrapper form .btn-send {
   border: 2px solid #2EFFD9;
   border-radius: 50px;
   width: 150px;
@@ -47,18 +46,17 @@ html {
   transition: all 200ms;
 }
 
-.btn a, #about .about-info .about-btns .btn-contact a, #about .about-info .about-btns .btn-resume a, #contact .wrapper form .btn-send a {
+.btn a, #about .about-info .about-btns .btn-resume a, #contact .wrapper form .btn-send a {
   color: #2EFFD9;
   text-decoration: none;
   font-size: 1.2em;
 }
 
-.btn:hover, #about .about-info .about-btns .btn-contact:hover,
-#about .about-info .about-btns .btn-resume:hover, #contact .wrapper form .btn-send:hover {
+.btn:hover, #about .about-info .about-btns .btn-resume:hover, #contact .wrapper form .btn-send:hover {
   background: #2EFFD9;
 }
 
-.btn:hover a, #about .about-info .about-btns .btn-contact:hover a, #about .about-info .about-btns .btn-resume:hover a, #contact .wrapper form .btn-send:hover a {
+.btn:hover a, #about .about-info .about-btns .btn-resume:hover a, #contact .wrapper form .btn-send:hover a {
   color: #1B1919;
 }
 
@@ -223,9 +221,9 @@ header nav .menu {
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
 }
 
-header .btn, header #about .about-info .about-btns .btn-contact, #about .about-info .about-btns header .btn-contact,
-header #about .about-info .about-btns .btn-resume, #about .about-info .about-btns header .btn-resume, header #contact .wrapper form .btn-send, #contact .wrapper form header .btn-send {
+header .btn, header #about .about-info .about-btns .btn-resume, #about .about-info .about-btns header .btn-resume, header #contact .wrapper form .btn-send, #contact .wrapper form header .btn-send {
   margin: 80px auto 0 auto;
+  cursor: pointer;
 }
 
 .hide-nav {
@@ -346,36 +344,83 @@ header .header-info .head-description {
           justify-content: center;
 }
 
-#about .about-info .about-btns .btn-contact,
 #about .about-info .about-btns .btn-resume {
   background: #2EFFD9;
-  color: #FEFEFE;
-  width: 150px;
-  height: 35px;
-  margin: 0 10px;
+  font-size: .9em;
+  margin-top: 10px;
+  cursor: pointer;
 }
 
-#about .about-info .about-btns .btn-contact a,
 #about .about-info .about-btns .btn-resume a {
   color: #FEFEFE;
 }
 
-#about .about-info .about-btns .btn-contact:hover,
 #about .about-info .about-btns .btn-resume:hover {
-  background: #FEFEFE;
-  border: 2px solid #2EFFD9;
-  color: #2EFFD9;
+  -webkit-box-shadow: 1px 1px 8px #1B1919;
+          box-shadow: 1px 1px 8px #1B1919;
 }
 
-#about .about-info .about-btns .btn-contact:hover a,
-#about .about-info .about-btns .btn-resume:hover a {
-  color: #2EFFD9;
+#about .about-picture {
+  display: none;
 }
 
 @media only screen and (min-width: 768px) {
+  #about {
+    height: 600px;
+  }
+  #about .wrapper {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  #about .wrapper .about-info {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+  }
   #about .wrapper .about-info ul {
     width: 50%;
     text-align-last: left;
+  }
+  #about .wrapper .about-picture {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #about .wrapper .about-picture .picture-area {
+    width: 300px;
+    height: 300px;
+    position: relative;
+  }
+  #about .wrapper .about-picture .picture-area img {
+    width: 100%;
+    height: 100%;
+  }
+  #about .wrapper .about-picture .picture-area:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background: rgba(27, 25, 25, 0.35);
+    -webkit-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+  }
+  #about .wrapper .about-picture .picture-area:hover:before {
+    background: transparent;
   }
 }
 
@@ -616,13 +661,16 @@ header .header-info .head-description {
 
 #contact .wrapper form .btn-send {
   margin: 25px 0;
-  border: 2px solid #1B1919;
-  font-size: 1em;
+  border: 2px solid #2EFFD9;
+  background: #2EFFD9;
+  font-size: .9em;
   padding: 5px;
+  cursor: pointer;
 }
 
 #contact .wrapper form .btn-send:hover {
-  border: 2px solid #2EFFD9;
+  -webkit-box-shadow: 1px 1px 8px #1B1919;
+          box-shadow: 1px 1px 8px #1B1919;
 }
 
 @media only screen and (min-width: 768px) {
