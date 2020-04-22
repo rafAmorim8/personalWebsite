@@ -585,13 +585,13 @@ header .header-info .head-description {
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1600px) {
   .portfolio .wrapper {
     width: 80%;
   }
   .portfolio .wrapper .portfolio-cards {
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
   }
   .portfolio .wrapper .portfolio-cards .portfolio-item {
     height: 350px;
@@ -706,10 +706,16 @@ header .header-info .head-description {
           box-shadow: 1px 1px 15px rgba(27, 25, 25, 0.25);
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   #contact .wrapper form {
     margin-top: 50px;
-    width: 60%;
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  #contact .wrapper form {
+    width: 70%;
   }
 }
 

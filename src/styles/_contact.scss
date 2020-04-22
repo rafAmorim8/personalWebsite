@@ -89,12 +89,22 @@
 }
 
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   #contact {
     .wrapper {
       form {
         margin-top: 50px;
-        width: 60%;
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  #contact {
+    .wrapper {
+      form {
+        width: 70%;
       }
     }
   }
