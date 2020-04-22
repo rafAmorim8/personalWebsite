@@ -412,7 +412,7 @@ header .header-info .head-description {
   }
   #about .wrapper .about-picture .picture-area {
     width: 300px;
-    height: 300px;
+    height: 400px;
     position: relative;
   }
   #about .wrapper .about-picture .picture-area img {
@@ -573,7 +573,6 @@ header .header-info .head-description {
         grid-template-columns: repeat(2, 1fr);
   }
   .portfolio .wrapper .portfolio-cards .portfolio-item {
-    height: 300px;
     -webkit-transition: -webkit-transform 200ms ease-in-out;
     transition: -webkit-transform 200ms ease-in-out;
     transition: transform 200ms ease-in-out;
