@@ -87,7 +87,7 @@ html {
 
 header {
   width: 100%;
-  height: 80vh;
+  height: 85vh;
   background-image: url("../img/bg-header.jpg");
   -webkit-box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.25);
           box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.25);
