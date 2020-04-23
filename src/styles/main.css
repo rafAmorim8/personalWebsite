@@ -634,6 +634,16 @@ header .header-info .head-description {
   margin: 15px 0;
 }
 
+#contact .wrapper form .form-success {
+  color: #06623b;
+  font-weight: 400;
+}
+
+#contact .wrapper form .form-error {
+  color: #dd2c00;
+  font-weight: 400;
+}
+
 #contact .wrapper form label {
   margin: 0 auto;
   width: 80%;

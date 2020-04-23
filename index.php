@@ -1,3 +1,7 @@
+<?php
+  $message = "";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -158,20 +162,21 @@
         <p>I am currently looking for co-op opportunities. However, feel free to <a class="animated-link"
             href="mailto:raff.code@gmail.com">email</a> me for any kind
           of project or even just to say hi.<br><br>If you prefer simply fill out the form bellow:</p>
-        <form action="send" method="post">
+        <form id="email-form" method="post">
+          <span id="alert"></span>
           <p>
             <label>Name</label>
-            <input type="text" name="name" placeholder="Enter your name">
+            <input type="text" name="name" id="name" placeholder="Enter your name">
           </p>
           <p>
             <label>Email</label>
-            <input type="email" name="email" placeholder="Enter your email">
+            <input type="email" name="email" id="email" placeholder="Enter your email">
           </p>
           <p>
             <label class="label-message">Message</label>
-            <textarea name="message" cols="30" rows="5" placeholder="Type your message"></textarea>
+            <textarea name="message" id="message" cols="30" rows="5" placeholder="Type your message"></textarea>
           </p>
-          <button class="btn-send" type="submit">Send</button>
+          <button id="btn-send" class="btn-send" type="submit" name="sendMail">Send</button>
         </form>
       </div>
     </section>
@@ -186,7 +191,27 @@
       </div>
     </footer>
   </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="./src/js/script.js" type="text/javascript"></script>
+  <script>
+    $(document).ready(function () {
+      let form = $("#email-form");
+      form.submit(function (e) {
+        e.preventDefault();
+
+        $.ajax({
+          type: "POST",
+          url: "./email.php",
+          data: $(this).serialize(),
+          success: function (data) {
+            let alert = $("#alert");
+            alert.remove();
+            form.prepend(data);
+          }
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
